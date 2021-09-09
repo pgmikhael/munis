@@ -22,17 +22,19 @@ jobs:
         python-version: '3.x'
     - name: Build Project
       run: |
-        python -m pip install --upgrade pip setuptools tox
+        python -m pip install --upgrade pip setuptools tox twine
         python -m tox -e clean,build
     - name: Publish Test PyPi
       env:
         TWINE_USERNAME: ${{ secrets.TEST_PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_PASSWORD }}
       run: |
-        python -m tox -e publish -- --verbose
+        python -m twine check dist/*
+        python -m twine upload --repository testpypi dist/*
     - name: Publish PyPi
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        python -m tox -e publish -- --verbose --repository pypi
+        python -m twine check dist/*
+        python -m twine upload --repository pypi dist/*
