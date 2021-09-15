@@ -1,3 +1,3 @@
 # Contributors
 
-* Jeremy Wohlwend <jeremy.wohlwend@gmail.com>
+* Peter Mikhael <pgmikhael@gmail.com>
