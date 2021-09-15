@@ -1,12 +1,12 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
-source = munis
+source = pipe
 # omit = bad_file.py
 
 [paths]
 source =
-    munis/
+    pipe/
     */site-packages/
 
 [report]
