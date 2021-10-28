@@ -1,12 +1,12 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
-source = pipe
+source = dopa
 # omit = bad_file.py
 
 [paths]
 source =
-    pipe/
+    dopa/
     */site-packages/
 
 [report]
